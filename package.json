@@ -1,6 +1,6 @@
 {
   "name": "sfdx-code-gen",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A tool for generating Salesforce DX source code from templates",
   "main": "app.js",
   "author": "Wade Wegner",
@@ -12,7 +12,6 @@
     "test": "node_modules/.bin/mocha",
     "release": "np"
   },
-
   "keywords": [
     "force.com",
     "salesforce",
