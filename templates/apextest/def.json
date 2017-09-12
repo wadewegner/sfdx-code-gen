@@ -1,0 +1,11 @@
+{
+  "vars": [
+    "className",
+    "apiName"
+  ],
+  "files": [
+    ["apextext.cls", "cls"],
+    ["apextext.cls-meta.xml", "cls-meta.xml"]
+  ],
+  "bundle": false
+}
