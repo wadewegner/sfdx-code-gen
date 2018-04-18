@@ -37,6 +37,12 @@ const codeCreate = require('../lib/code_create.js');
       description: 'variables required by the template',
       hasValue: true,
       required: false
+    }, {
+      name: 'usecurrentfolder',
+      char: 'c',
+      description: 'use current working directory to look for .sfdx-templates',
+      hasValue: false,
+      required: false
     }],
     run(context) {
 
@@ -44,8 +50,9 @@ const codeCreate = require('../lib/code_create.js');
       const name = context.flags.name;
       const outputdir = context.flags.outputdir;
       const vars = context.flags.vars;
+      const usecurrentfolder = context.flags.usecurrentfolder;
 
-      let templateFolder = path.join(os.homedir(), '.sfdx-templates', template);
+      let templateFolder = usecurrentfolder ? path.join('./', '.sfdx-templates', template) :  path.join(os.homedir(), '.sfdx-templates', template);
       if (!fse.existsSync(templateFolder)) {
         templateFolder = path.join(__dirname, '../templates', template);
       }
